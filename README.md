@@ -12,9 +12,9 @@
 - Restart Notepad++
 
 ### HTML/JS code before:
-![Printscreen](https://raw.githubusercontent.com/tomFlidr/Notepad-JS-HTML-Beautifuller-Plugin/master/before.jpg)
+![Printscreen](https://raw.githubusercontent.com/tomFlidr/Notepad-JS-HTML-Beautifier-Plugin/master/before.jpg)
 
 ### Main Menu > JSBeautifier > Beautify JS/HTML > Click
 
 ### HTML/JS code after:
-![Printscreen](https://raw.githubusercontent.com/tomFlidr/Notepad-JS-HTML-Beautifuller-Plugin/master/after.jpg)
+![Printscreen](https://raw.githubusercontent.com/tomFlidr/Notepad-JS-HTML-Beautifier-Plugin/master/after.jpg)
