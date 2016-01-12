@@ -1,4 +1,4 @@
-# Notepad-JS-HTML-Beautifier-Plugin
+# Notepad++ JS/HTML Beautifier Plugin
 - Notepad++ JS HTML Beautifier Plugin for jN Plugin (Javascript plugin, old name: npp scripting)
 - Proudly based on library from http://jsbeautifier.org/
 
