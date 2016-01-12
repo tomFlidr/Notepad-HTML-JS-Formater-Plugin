@@ -13,7 +13,7 @@ Notepad++ JS HTML Beautifuller Plugin for jN Plugin (Javascript plugin, old name
 ### HTML/JS code before:
 ![Printscreen](https://raw.githubusercontent.com/tomFlidr/Notepad-JS-HTML-Beautifuller-Plugin/master/before.jpg)
 
-### Go to: Main Menu -> JSBeautifier -> Beautify JS/HTML -> click (or CTRL+SHIFT+J)
+### Main Menu > JSBeautifier > Beautify JS/HTML > Click
 
 ### HTML/JS code after:
 ![Printscreen](https://raw.githubusercontent.com/tomFlidr/Notepad-JS-HTML-Beautifuller-Plugin/master/after.jpg)
