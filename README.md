@@ -8,7 +8,7 @@
  - Windows x64:
    - c:\Program Files (x86)\Notepad++\plugins\jN\includes\JS Beautifuller.js
  - Windows x86:
-   - - c:\Program Files (x86)\Notepad++\plugins\jN\includes\JS Beautifuller.js
+   - c:\Program Files\Notepad++\plugins\jN\includes\JS Beautifuller.js
 - Restart Notepad++
 
 ### HTML/JS code before:
