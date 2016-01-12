@@ -1,6 +1,6 @@
 # Notepad-JS-HTML-Beautifuller-Plugin
-Notepad++ JS HTML Beautifuller Plugin for jN Plugin (Javascript plugin, old name: npp scripting)
-Proudly based on library from http://jsbeautifier.org/
+- Notepad++ JS HTML Beautifuller Plugin for jN Plugin (Javascript plugin, old name: npp scripting)
+- Proudly based on library from http://jsbeautifier.org/
 
 ## Usage
 - Instal plugin [jN (Notepad++ Javascript Scripting)](https://code.google.com/p/jn-npp-plugin/)
