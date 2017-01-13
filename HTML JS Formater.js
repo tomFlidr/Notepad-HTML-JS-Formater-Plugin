@@ -2,13 +2,15 @@
 
 	/**
 	 *
-	 * JSBeautifier | http://jsbeautifier.org/
-	 * (minimized whitespaces only)
+	 * HTML/JS Formater
 	 *
-	 * beautify.js
-	 * beautify-html.js
+	 * Using sources from http://jsbeautifier.org/
+	 * (with minimized whitespaces only)
+	 *
+	 * format.js
+	 * format-html.js
 	 * tests/sanitytest.js
-	 * tests/beautify-tests.js
+	 * tests/format-tests.js
 	 * unpackers/javascriptobfuscator_unpacker.js
 	 * unpackers/urlencode_unpacker.js
 	 * unpackers/p_a_c_k_e_r_unpacker.js
@@ -16,7 +18,7 @@
 	 *
 	*/
 
-function js_beautify(a,e){function p(d){for(d=typeof d==="undefined"?false:d;o.length&&(o[o.length-1]===" "||o[o.length-1]===F||d&&(o[o.length-1]==="\n"||o[o.length-1]==="\r"));)o.pop()}function f(d){c.eat_next_space=false;if(!(z&&q(c.mode))){d=typeof d==="undefined"?true:d;c.if_line=false;p();if(o.length){if(o[o.length-1]!=="\n"||!d){D=true;o.push("\n")}for(d=0;d<c.indentation_level;d+=1)o.push(F);if(c.var_line&&c.var_line_reindented)R===" "?o.push("\t"):o.push(F)}}}function n(){if(c.eat_next_space)c.eat_next_space=
+function js_format(a,e){function p(d){for(d=typeof d==="undefined"?false:d;o.length&&(o[o.length-1]===" "||o[o.length-1]===F||d&&(o[o.length-1]==="\n"||o[o.length-1]==="\r"));)o.pop()}function f(d){c.eat_next_space=false;if(!(z&&q(c.mode))){d=typeof d==="undefined"?true:d;c.if_line=false;p();if(o.length){if(o[o.length-1]!=="\n"||!d){D=true;o.push("\n")}for(d=0;d<c.indentation_level;d+=1)o.push(F);if(c.var_line&&c.var_line_reindented)R===" "?o.push("\t"):o.push(F)}}}function n(){if(c.eat_next_space)c.eat_next_space=
 false;else{var d=" ";if(o.length)d=o[o.length-1];d!==" "&&d!=="\n"&&d!==F&&o.push(" ")}}function b(){D=false;c.eat_next_space=false;o.push(r)}function h(){o.length&&o[o.length-1]===F&&o.pop()}function i(d){c&&L.push(c);c={previous_mode:c?c.mode:"BLOCK",mode:d,var_line:false,var_line_tainted:false,var_line_reindented:false,in_html_comment:false,if_line:false,in_case:false,eat_next_space:false,indentation_baseline:-1,indentation_level:c?c.indentation_level+(c.var_line&&c.var_line_reindented?1:0):U,
 ternary_depth:0}}function q(d){return d==="[EXPRESSION]"||d==="[INDENTED-EXPRESSION]"}function y(d){return d==="[EXPRESSION]"||d==="[INDENTED-EXPRESSION]"||d==="(EXPRESSION)"}function G(){M=c.mode==="DO_BLOCK";if(L.length>0)c=L.pop()}function s(d,t){for(var u=0;u<t.length;u+=1)if(t[u]===d)return true;return false}function J(){A=0;if(g>=w)return["","TK_EOF"];K=false;var d=m.charAt(g);g+=1;if(z&&q(c.mode)){for(var t=0;s(d,O);){if(d==="\n"){p();o.push("\n");D=true;t=0}else if(d==="\t")t+=4;else if(d!==
 "\r")t+=1;if(g>=w)return["","TK_EOF"];d=m.charAt(g);g+=1}if(c.indentation_baseline===-1)c.indentation_baseline=t;if(D){var u;for(u=0;u<c.indentation_level+1;u+=1)o.push(F);if(c.indentation_baseline!==-1)for(u=0;u<t-c.indentation_baseline;u++)o.push(" ")}}else{for(;s(d,O);){if(d==="\n")A+=S?A<=S?1:0:1;if(g>=w)return["","TK_EOF"];d=m.charAt(g);g+=1}if(P)if(A>1)for(u=0;u<A;u+=1){f(u===0);D=true}K=A>0}if(s(d,N)){if(g<w)for(;s(m.charAt(g),N);){d+=m.charAt(g);g+=1;if(g===w)break}if(g!==w&&d.match(/^[0-9]+[Ee]$/)&&
@@ -36,7 +38,7 @@ false;c.var_line_reindented=false;f()}}else if(s(r,H)&&l!=")"){c.var_line=false;
 j==="TK_SEMICOLON")f();else j==="TK_WORD"&&n();b();break;case "TK_EQUALS":if(c.var_line)c.var_line_tainted=true;n();b();n();break;case "TK_OPERATOR":v=x=true;if(c.var_line&&r===","&&y(c.mode))c.var_line_tainted=false;if(c.var_line)if(r===",")if(c.var_line_tainted){b();c.var_line_reindented=true;c.var_line_tainted=false;f();break}else c.var_line_tainted=false;if(l==="return"||l==="throw"){n();b();break}if(r===":"&&c.in_case){b();f();c.in_case=false;break}if(r==="::"){b();break}if(r===","){if(c.var_line)if(c.var_line_tainted){b();
 f();c.var_line_tainted=false}else{b();n()}else if(j==="TK_END_BLOCK"&&c.mode!=="(EXPRESSION)"){b();c.mode==="OBJECT"&&l==="}"?f():n()}else if(c.mode==="OBJECT"){b();f()}else{b();n()}break}else if(s(r,["--","++","!"])||s(r,["-","+"])&&(s(j,["TK_START_BLOCK","TK_START_EXPR","TK_EQUALS","TK_OPERATOR"])||s(l,H))){v=x=false;if(l===";"&&y(c.mode))x=true;if(j==="TK_WORD"&&s(l,H))x=true;if(c.mode==="BLOCK"&&(l==="{"||l===";"))f()}else if(r===".")x=false;else if(r===":")if(c.ternary_depth==0){c.mode="OBJECT";
 x=false}else c.ternary_depth-=1;else if(r==="?")c.ternary_depth+=1;x&&n();b();v&&n();break;case "TK_BLOCK_COMMENT":x=r.split(/\x0a|\x0d\x0a/);if(/^\/\*\*/.test(r)){f();o.push(x[0]);for(v=1;v<x.length;v++){f();o.push(" ");o.push(x[v].replace(/^\s\s*|\s\s*$/,""))}}else{if(x.length>1){f();p()}else n();for(v=0;v<x.length;v++){o.push(x[v]);o.push("\n")}}f();break;case "TK_INLINE_COMMENT":n();b();y(c.mode)?n():f();break;case "TK_COMMENT":K?f():n();b();f();break;case "TK_UNKNOWN":if(l==="return"||l==="throw")n();
-b()}x=l;j=I;l=r}return o.join("").replace(/[\n ]+$/,"")}if(typeof exports!=="undefined")exports.js_beautify=js_beautify;
+b()}x=l;j=I;l=r}return o.join("").replace(/[\n ]+$/,"")}if(typeof exports!=="undefined")exports.js_format=js_format;
 function style_html(a,e,p,f,n){f=new function(){this.pos=0;this.token="";this.current_mode="CONTENT";this.tags={parent:"parent1",parentcount:1,parent1:""};this.token_text=this.last_token=this.last_text=this.token_type=this.tag_type="";this.Utils={whitespace:"\n\r\t ".split(""),single_token:"br,input,link,meta,!doctype,basefont,base,area,hr,wbr,param,img,isindex,?xml,embed".split(","),extra_liners:"head,body,/html".split(","),in_array:function(b,h){for(var i=0;i<h.length;i++)if(b===h[i])return true;
 return false}};this.get_content=function(){for(var b="",h=[],i=false;this.input.charAt(this.pos)!=="<";){if(this.pos>=this.input.length)return h.length?h.join(""):["","TK_EOF"];b=this.input.charAt(this.pos);this.pos++;this.line_char_count++;if(this.Utils.in_array(b,this.Utils.whitespace)){if(h.length)i=true;this.line_char_count--}else{if(i){if(this.line_char_count>=this.max_char){h.push("\n");for(i=0;i<this.indent_level;i++)h.push(this.indent_string);this.line_char_count=0}else{h.push(" ");this.line_char_count++}i=
 false}h.push(b)}}return h.length?h.join(""):""};this.get_script=function(){var b="",h=[];b=RegExp("<\/script>","igm");b.lastIndex=this.pos;for(var i=(b=b.exec(this.input))?b.index:this.input.length;this.pos<i;){if(this.pos>=this.input.length)return h.length?h.join(""):["","TK_EOF"];b=this.input.charAt(this.pos);this.pos++;h.push(b)}return h.length?h.join(""):""};this.record_tag=function(b){if(this.tags[b+"count"])this.tags[b+"count"]++;else this.tags[b+"count"]=1;this.tags[b+this.tags[b+"count"]]=
@@ -45,16 +47,16 @@ else this.tags[b+"count"]--}};this.get_tag=function(){var b="",h=[],i=false;do{i
 h);this.line_char_count=0}else{h.push(" ");this.line_char_count++}i=false}h.push(b)}}while(b!==">");b=h.join("");i=b.indexOf(" ")!=-1?b.indexOf(" "):b.indexOf(">");i=b.substring(1,i).toLowerCase();if(b.charAt(b.length-2)==="/"||this.Utils.in_array(i,this.Utils.single_token))this.tag_type="SINGLE";else if(i==="script"){this.record_tag(i);this.tag_type="SCRIPT"}else if(i==="style"){this.record_tag(i);this.tag_type="STYLE"}else if(i==="a"){b=this.get_unformatted("</a>",b);h.push(b);this.tag_type="SINGLE"}else if(i.charAt(0)===
 "!")if(i.indexOf("[if")!=-1){if(b.indexOf("!IE")!=-1){b=this.get_unformatted("--\>",b);h.push(b)}this.tag_type="START"}else if(i.indexOf("[endif")!=-1){this.tag_type="END";this.unindent()}else{b=i.indexOf("[cdata[")!=-1?this.get_unformatted("]]\>",b):this.get_unformatted("--\>",b);h.push(b);this.tag_type="SINGLE"}else{if(i.charAt(0)==="/"){this.retrieve_tag(i.substring(1));this.tag_type="END"}else{this.record_tag(i);this.tag_type="START"}this.Utils.in_array(i,this.Utils.extra_liners)&&this.print_newline(true,
 this.output)}return h.join("")};this.get_unformatted=function(b,h){if(h&&h.indexOf(b)!=-1)return"";var i="",q="",y=true;do{if(this.pos>=this.input.length)break;i=this.input.charAt(this.pos);this.pos++;if(this.Utils.in_array(i,this.Utils.whitespace)){if(!y){this.line_char_count--;continue}if(i==="\n"||i==="\r"){q+="\n";for(i=0;i<this.indent_level;i++)q+=this.indent_string;y=false;this.line_char_count=0;continue}}q+=i;this.line_char_count++;y=true}while(q.indexOf(b)==-1);return q};this.get_token=function(){var b;
-if(this.last_token==="TK_TAG_SCRIPT"){b=this.get_script();if(typeof b!=="string")return b;b=js_beautify(b,{indent_size:this.indent_size,indent_char:this.indent_character,indent_level:this.indent_level,brace_style:this.brace_style});return[b,"TK_CONTENT"]}if(this.current_mode==="CONTENT"){b=this.get_content();return typeof b!=="string"?b:[b,"TK_CONTENT"]}if(this.current_mode==="TAG"){b=this.get_tag();return typeof b!=="string"?b:[b,"TK_TAG_"+this.tag_type]}};this.printer=function(b,h,i,q,y){this.input=
+if(this.last_token==="TK_TAG_SCRIPT"){b=this.get_script();if(typeof b!=="string")return b;b=js_format(b,{indent_size:this.indent_size,indent_char:this.indent_character,indent_level:this.indent_level,brace_style:this.brace_style});return[b,"TK_CONTENT"]}if(this.current_mode==="CONTENT"){b=this.get_content();return typeof b!=="string"?b:[b,"TK_CONTENT"]}if(this.current_mode==="TAG"){b=this.get_tag();return typeof b!=="string"?b:[b,"TK_TAG_"+this.tag_type]}};this.printer=function(b,h,i,q,y){this.input=
 b||"";this.output=[];this.indent_character=h||" ";this.indent_string="";this.indent_size=i||2;this.brace_style=y||"collapse";this.indent_level=0;this.max_char=q||70;for(b=this.line_char_count=0;b<this.indent_size;b++)this.indent_string+=this.indent_character;this.print_newline=function(G,s){this.line_char_count=0;if(s&&s.length){if(!G)for(;this.Utils.in_array(s[s.length-1],this.Utils.whitespace);)s.pop();s.push("\n");for(var J=0;J<this.indent_level;J++)s.push(this.indent_string)}};this.print_token=
 function(G){this.output.push(G)};this.indent=function(){this.indent_level++};this.unindent=function(){this.indent_level>0&&this.indent_level--}};return this};for(f.printer(a,p,e,80,n);;){a=f.get_token();f.token_text=a[0];f.token_type=a[1];if(f.token_type==="TK_EOF")break;switch(f.token_type){case "TK_TAG_START":case "TK_TAG_SCRIPT":case "TK_TAG_STYLE":f.print_newline(false,f.output);f.print_token(f.token_text);f.indent();f.current_mode="CONTENT";break;case "TK_TAG_END":f.print_newline(true,f.output);
 f.print_token(f.token_text);f.current_mode="CONTENT";break;case "TK_TAG_SINGLE":f.print_newline(false,f.output);f.print_token(f.token_text);f.current_mode="CONTENT";break;case "TK_CONTENT":if(f.token_text!==""){f.print_newline(false,f.output);f.print_token(f.token_text)}f.current_mode="TAG"}f.last_token=f.token_type;f.last_text=f.token_text}return f.output.join("")}
 function SanityTest(a,e){var p=a||function(h){return h};e=e||"";var f=0,n=0,b=[];this.test_function=function(h,i){p=h;e=i||""};this.expect=function(h,i){var q=p(h);if(q===i||i instanceof Array&&q.join(", ")==i.join(", "))n+=1;else{f+=1;b.push([e,h,i,q])}};this.results_raw=function(){var h="";if(f===0)h=n===0?"No tests run.":"All "+n+" tests passed.";else{for(var i=0;i<b.length;i++){var q=b[i];if(q[0])q[0]+=" ";h+="---- "+q[0]+"input -------\n"+this.prettyprint(q[1])+"\n";h+="---- "+q[0]+"expected ----\n"+
 this.prettyprint(q[2])+"\n";h+="---- "+q[0]+"output ------\n"+this.prettyprint(q[3])+"\n\n"}h+=f+" tests failed.\n"}return h};this.results=function(){return this.lazy_escape(this.results_raw())};this.prettyprint=function(h,i){var q=typeof h;switch(q.toLowerCase()){case "string":return i?"'"+h.replace("'","\\'")+"'":h;case "number":return""+h;case "boolean":return h?"true":"false";case "undefined":return"undefined";case "object":if(h instanceof Array){q=[];var y=0;for(k in h)if(k==y){q.push(this.prettyprint(h[k],
 true));y+=1}else q.push("\n"+k+": "+this.prettyprint(h[k],true));return"["+q.join(", ")+"]"}else return"object: "+h;default:return q+": "+h}};this.lazy_escape=function(h){return h.replace(/</g,"&lt;").replace(/\>/g,"&gt;").replace(/\n/g,"<br />")};this.log=function(){if(window.console)console.firebug?console.log.apply(console,Array.prototype.slice.call(arguments)):console.log.call(console,Array.prototype.slice.call(arguments))}}
-opts={indent_size:4,indent_char:" ",preserve_newlines:true,jslint_happy:false,keep_array_indentation:false,brace_style:"collapse"};function test_beautifier(a){return js_beautify(a,opts)}var sanitytest;function test_fragment(a,e){e=e||a;sanitytest.expect(a,e)}function bt(a,e){var p,f;e=e||a;test_fragment(a,e);if(opts.indent_size===4&&a){p="{\n"+a+"\nfoo=bar;}";f="{\n"+e.replace(/^(.+)$/mg,"\t$1")+"\n\tfoo = bar;\n}";test_fragment(p,f)}}
+opts={indent_size:4,indent_char:" ",preserve_newlines:true,jslint_happy:false,keep_array_indentation:false,brace_style:"collapse"};function test_beautifier(a){return js_format(a,opts)}var sanitytest;function test_fragment(a,e){e=e||a;sanitytest.expect(a,e)}function bt(a,e){var p,f;e=e||a;test_fragment(a,e);if(opts.indent_size===4&&a){p="{\n"+a+"\nfoo=bar;}";f="{\n"+e.replace(/^(.+)$/mg,"\t$1")+"\n\tfoo = bar;\n}";test_fragment(p,f)}}
 function bt_braces(a,e){var p=opts.brace_style;opts.brace_style="expand";bt(a,e);opts.brace_style=p}
-function run_beautifier_tests(a){sanitytest=a||new SanityTest;sanitytest.test_function(test_beautifier,"js_beautify");opts.indent_size=4;opts.indent_char=" ";opts.preserve_newlines=true;opts.jslint_happy=false;opts.keep_array_indentation=false;opts.brace_style="collapse";bt("");bt("return .5");bt("a\t\t=\t\t  1","a = 1");bt("a=1","a = 1");bt("a();\n\nb();","a();\n\nb();");bt("var a = 1 var b = 2","var a = 1\nvar b = 2");bt("var a=1, b=c[d], e=6;","var a = 1,\n\tb = c[d],\n\te = 6;");bt('a = " 12345 "');
+function run_beautifier_tests(a){sanitytest=a||new SanityTest;sanitytest.test_function(test_beautifier,"js_format");opts.indent_size=4;opts.indent_char=" ";opts.preserve_newlines=true;opts.jslint_happy=false;opts.keep_array_indentation=false;opts.brace_style="collapse";bt("");bt("return .5");bt("a\t\t=\t\t  1","a = 1");bt("a=1","a = 1");bt("a();\n\nb();","a();\n\nb();");bt("var a = 1 var b = 2","var a = 1\nvar b = 2");bt("var a=1, b=c[d], e=6;","var a = 1,\n\tb = c[d],\n\te = 6;");bt('a = " 12345 "');
 bt("a = ' 12345 '");bt("if (a == 1) b = 2;","if (a == 1) b = 2;");bt("if(1){2}else{3}","if (1) {\n\t2\n} else {\n\t3\n}");bt("if (foo) bar();\nelse\ncar();","if (foo) bar();\nelse car();");bt("if(1||2);","if (1 || 2);");bt("(a==1)||(b==2)","(a == 1) || (b == 2)");bt("var a = 1 if (2) 3;","var a = 1\nif (2) 3;");bt("a = a + 1");bt("a = a == 1");bt("/12345[^678]*9+/.match(a)");bt("a /= 5");bt("a = 0.5 * 3");bt("a *= 10.55");bt("a < .5");bt("a <= .5");bt("a<.5","a < .5");bt("a<=.5","a <= .5");bt("a = 0xff;");
 bt("a=0xff+4","a = 0xff + 4");bt("a = [1, 2, 3, 4]");bt("F*(g/=f)*g+b","F * (g /= f) * g + b");bt("a.b({c:d})","a.b({\n\tc: d\n})");bt("a.b\n(\n{\nc:\nd\n}\n)","a.b({\n\tc: d\n})");bt("a=!b","a = !b");bt("a?b:c","a ? b : c");bt("a?1:2","a ? 1 : 2");bt("a?(b):c","a ? (b) : c");bt('x={a:1,b:w=="foo"?x:y,c:z}','x = {\n\ta: 1,\n\tb: w == "foo" ? x : y,\n\tc: z\n}');bt("x=a?b?c?d:e:f:g;","x = a ? b ? c ? d : e : f : g;");bt("x=a?b?c?d:{e1:1,e2:2}:f:g;","x = a ? b ? c ? d : {\n\te1: 1,\n\te2: 2\n} : f : g;");
 bt("function void(void) {}");bt("if(!a)foo();","if (!a) foo();");bt("a=~a","a = ~a");bt("a;/*comment*/b;","a; /*comment*/\nb;");bt("a;/* comment */b;","a; /* comment */\nb;");test_fragment("a;/*\ncomment\n*/b;","a;\n/*\ncomment\n*/\nb;");bt("a;/**\n* javadoc\n*/b;","a;\n/**\n * javadoc\n */\nb;");bt("if(a)break;","if (a) break;");bt("if(a){break}","if (a) {\n\tbreak\n}");bt("if((a))foo();","if ((a)) foo();");bt("for(var i=0;;)","for (var i = 0;;)");bt("a++;","a++;");bt("for(;;i++)","for (;; i++)");
@@ -90,10 +92,10 @@ true);a.expect('var _0xaaaa=["a", "b"]',true);a.expect('var _0x1234=["a","b"]',t
 "Urlencoded.detect");a.expect("",false);a.expect("var a = b",false);a.expect("var%20a+=+b",true);a.expect("var%20a=b",true);a.expect("var%20%21%22",true);a.test_function(Urlencoded.unpack,"Urlencoded.unpack");a.expect("","");a.expect("abcd","abcd");a.expect("var a = b","var a = b");a.expect("var%20a=b","var a=b");a.expect("var%20a+=+b","var a = b");return a}};
 
 	/**
-	 * JSBeautifier Notepad++ Wrapper
+	 * Formater Notepad++ Wrapper
 	 */
 
-	var JSBeautifierWrapper = {
+	var FormaterWrapper = {
 
 		config: {
 		
@@ -111,25 +113,25 @@ true);a.expect('var _0xaaaa=["a", "b"]',true);a.expect('var _0x1234=["a","b"]',t
 				return this.DEFAULT_VALUES;
 			},
 			setConfig: function(config){
-				//GlobalSettings.set("JSBeautifuller", config);
+				//GlobalSettings.set("FormaterWrapper", config);
 			}
 			
 		},
 
 		actions: {
 			
-			beautifyInProgress: false,
+			formatInProgress: false,
 			
-			beautifySelection: function(){
+			formatSelection: function(){
 			
-				var content = JSBeautifierWrapper.editor.getContent();
+				var content = FormaterWrapper.editor.getContent();
 				
-				var config = JSBeautifierWrapper.config.getConfig();
-				var beautifiedContent = this.beautify(content, config);
+				var config = FormaterWrapper.config.getConfig();
+				var beautifiedContent = this.format(content, config);
 				
-				var positions = JSBeautifierWrapper.editor.getSelectionPositions();
+				var positions = FormaterWrapper.editor.getSelectionPositions();
 				
-				JSBeautifierWrapper.editor.setContent(
+				FormaterWrapper.editor.setContent(
 					beautifiedContent, 
 					positions.start, 
 					positions.end
@@ -142,9 +144,9 @@ true);a.expect('var _0xaaaa=["a", "b"]',true);a.expect('var _0x1234=["a","b"]',t
 				
 			},
 			
-			beautify: function(source, options){
-				if (this.beautifyInProgress) return;
-				this.beautifyInProgress = true;
+			format: function(source, options){
+				if (this.formatInProgress) return;
+				this.formatInProgress = true;
 				
 				var result = '';
 				
@@ -171,7 +173,7 @@ true);a.expect('var _0xaaaa=["a", "b"]',true);a.expect('var _0x1234=["a","b"]',t
 						options.braceStyle
 					);
 				} else {
-					result = js_beautify(
+					result = js_format(
 						this.unpackerFilter(source),
 						{
 							indent_size:				options.tabSize,
@@ -184,7 +186,7 @@ true);a.expect('var _0xaaaa=["a", "b"]',true);a.expect('var _0x1234=["a","b"]',t
 					);
 				}
 			 
-				this.beautifyInProgress = false;
+				this.formatInProgress = false;
 				
 				return result;
 			},
@@ -226,9 +228,9 @@ true);a.expect('var _0xaaaa=["a", "b"]',true);a.expect('var _0x1234=["a","b"]',t
 		menu: {
 		
 			MENU_CONFIG: {
-				MAIN_TEXT: 'JSBeautifier',
+				MAIN_TEXT: 'HTML/JS Formater',
 				ITEMS: [
-					['Beautify JS/HTML', 'beautifySelection', 'Ctrl+Shift+J'],
+					['Format HTML/JS', 'formatSelection', 'Ctrl+Shift+J'],
 					['Options', 'openSettingsDialog', 'Ctrl+Shift+R']
 				]
 			},
@@ -253,7 +255,7 @@ true);a.expect('var _0xaaaa=["a", "b"]',true);a.expect('var _0x1234=["a","b"]',t
 				var menuObj = {
 					text: name + (keystroke ? '\t' + keystroke : ''),
 					cmd: function() {
-						JSBeautifierWrapper.actions[action]();
+						FormaterWrapper.actions[action]();
 					},
 					ctrl: false,
 					alt: false,
@@ -382,6 +384,6 @@ true);a.expect('var _0xaaaa=["a", "b"]',true);a.expect('var _0x1234=["a","b"]',t
 
 	};
 
-	JSBeautifierWrapper.menu.addMenuItems();
+	FormaterWrapper.menu.addMenuItems();
 
 })();
