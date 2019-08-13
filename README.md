@@ -23,7 +23,7 @@
     - Windows x86:       `C:\Program Files\Notepad++\plugins\jN\includes\HTML JS Formater.js`
 - Restart Notepad++
 - Select all (press `CTRL + A`)
-- Format code (press `CTRL` + SHIFT + J` or `Main Menu -> HTML/JS Formater -> Format HTML/JS`)
+- Format code (press `CTRL + SHIFT + J` or `Main Menu -> HTML/JS Formater -> Format HTML/JS`)
 
 ### HTML/JS code before:
 ![Printscreen](https://raw.githubusercontent.com/tomFlidr/Notepad-HTML-JS-Formater-Plugin/master/before.jpg)
