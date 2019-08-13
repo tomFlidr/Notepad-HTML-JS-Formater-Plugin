@@ -7,13 +7,13 @@
   - for Notepad++ v7.x and newer - install plugin via Notepad++ plugins manager
     - latest tested version: jN Notepad++ Plugin 2.2.185.5
     - the newest plugin version has filesystem structure: 
-     - C:\Program Files (x86)\Notepad++\plugins\jN\jN.dll
-     - C:\Program Files (x86)\Notepad++\plugins\jN\jN\\...
+      - C:\Program Files (x86)\Notepad++\plugins\jN\jN.dll
+      - C:\Program Files (x86)\Notepad++\plugins\jN\jN\\...
   - for older Notepad++ v6.x and older - install plugin manually from [google code archive](https://code.google.com/archive/p/jn-npp-plugin)
     - latest tested version: [jN_2.0.116.zip](https://code.google.com/archive/p/jn-npp-plugin/downloads)
-    - the older plugin version has filesystem structure: 
-      - c:\Program Files (x86)\Notepad++\plugins\jN.dll
-      - c:\Program Files (x86)\Notepad++\plugins\jN\\...
+    - the older plugin version has different filesystem structure: 
+      - C:\Program Files (x86)\Notepad++\plugins\jN.dll
+      - C:\Program Files (x86)\Notepad++\plugins\jN\\...
 - Place "HTML JS Formater.js" file into directory:
   - for Notepad++ v7.x and newer:
     - Windows x64: C:\Program Files (x86)\Notepad++\plugins\jN\jN\includes\HTML JS Formater.js
