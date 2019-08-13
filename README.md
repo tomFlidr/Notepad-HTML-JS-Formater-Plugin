@@ -2,7 +2,7 @@
 - Notepad++ HTML/JS Formater Plugin for jN Plugin (JScript plugin, originaly 'npp scripting')
 - Proudly based on sources from http://jsbeautifier.org/
 
-## Usage
+## Installation
 - Instal plugin **jN (Notepad++ Javascript Scripting**
   - for Notepad++ v7.x and newer - install plugin via Notepad++ plugins manager
     - latest tested version: `jN Notepad++ Plugin 2.2.185.5`
