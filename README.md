@@ -3,7 +3,11 @@
 - Proudly based on sources from http://jsbeautifier.org/
 
 ## Usage
-- Instal plugin [jN (Notepad++ Javascript Scripting)](https://code.google.com/p/jn-npp-plugin/)
+- Instal plugin [jN (Notepad++ Javascript Scripting)](https://code.google.com/archive/p/jn-npp-plugin)
+ - latest tested version: [jN_2.0.116.zip](https://code.google.com/archive/p/jn-npp-plugin/downloads)
+ - the result filesystem structure has to be: 
+   - c:\Program Files (x86)\Notepad++\plugins\jN.dll
+   - c:\Program Files (x86)\Notepad++\plugins\jN\\...
 - Place "HTML JS Formater.js" file into directory:
  - Windows x64:
    - c:\Program Files (x86)\Notepad++\plugins\jN\includes\HTML JS Formater.js
