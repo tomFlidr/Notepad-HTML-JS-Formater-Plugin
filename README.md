@@ -16,11 +16,11 @@
       - `C:\Program Files (x86)\Notepad++\plugins\jN\...`
 - Place `HTML JS Formater.js` file into directory:
   - for Notepad++ v7.x and newer:
-    - Windows x64: `C:\Program Files (x86)\Notepad++\plugins\jN\jN\includes\HTML JS Formater.js`
-    - Windows x86:       `C:\Program Files\Notepad++\plugins\jN\jN\includes\HTML JS Formater.js`
+    - Notepad++ x64: `C:\Program Files\Notepad++\plugins\jN\jN\includes\HTML JS Formater.js`
+    - Notepad++ x86: `C:\Program Files (x86)\Notepad++\plugins\jN\jN\includes\HTML JS Formater.js`
   - for Notepad++ v6.x and older:
-    - Windows x64: `C:\Program Files (x86)\Notepad++\plugins\jN\includes\HTML JS Formater.js`
-    - Windows x86:       `C:\Program Files\Notepad++\plugins\jN\includes\HTML JS Formater.js`
+    - Windows x64: `C:\Program Files\Notepad++\plugins\jN\includes\HTML JS Formater.js`
+    - Windows x86: `C:\Program Files (x86)\Notepad++\plugins\jN\includes\HTML JS Formater.js`
 - Restart Notepad++
 - Select all (press `CTRL + A`)
 - Format code (press `CTRL + SHIFT + J` or `Main Menu -> HTML/JS Formater -> Format HTML/JS`)
